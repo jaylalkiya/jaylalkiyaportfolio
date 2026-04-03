@@ -1,4 +1,4 @@
-// js/script.js — JayOS v3
+// js/script.js — JayLalkiya v3
 
 /* ═══════════════════════════════
    CURSOR
@@ -96,7 +96,7 @@ function initTerminal() {
   }
 
   // Welcome
-  writeLine(`<span style="color:var(--blue)">JayOS v3.0</span> — type <span style="color:var(--purple)">help</span> for commands`);
+  writeLine(`<span style="color:var(--blue)">JayLalkiya v3.0</span> — type <span style="color:var(--purple)">help</span> for commands`);
 
   input.addEventListener('keydown', e => {
     if (e.key !== 'Enter') return;
