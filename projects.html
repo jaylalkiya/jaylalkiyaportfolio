@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JayOS — DEPLOY.APPS | Jay Lalkiya Live Instances">
+  <title>JayOS — DEPLOY.APPS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="os-body">
+
+<div id="custom-cursor"></div>
+<div id="cursor-dot"></div>
+
+<!-- Header -->
+<header class="os-header glass">
+  <div class="hdr-left">
+    <div class="logo-wrap">
+      <span>🌀</span>
+      <span class="logo-text-gradient">JAYOS</span>
+    </div>
+    <div class="module-badge">DEPLOY.APPS</div>
+  </div>
+  <div class="hdr-center">
+    <div class="status-chip">
+      <span class="status-dot"></span>
+      <span>4 CONTAINERS RUNNING · LIVE</span>
+    </div>
+  </div>
+  <div class="hdr-right">
+    <div class="user-chip glass">
+      <span class="user-av">JL</span>
+      <span>Jay Lalkiya</span>
+    </div>
+    <div id="live-clock">--:--</div>
+    <button class="term-btn" onclick="toggleTerminal()" title="Terminal (/)">⌘</button>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="page-main">
+  <div class="panel glass fade-up">
+
+    <div style="margin-bottom:36px;">
+      <div class="panel-eyebrow">PRODUCTION INSTANCES</div>
+      <h1 class="panel-title">DEPLOY<span class="accent">.APPS</span></h1>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- CodeShelf -->
+      <div class="project-card glass-hot" onclick="openModal(0)">
+        <span class="proj-icon">📚</span>
+        <div class="proj-title">CodeShelf</div>
+        <div class="proj-stack">Java · JSP · MySQL · Servlets · Tomcat</div>
+        <div class="proj-desc">Multi-module MVC Java JSP platform with 6 integrated utilities, role-based auth, and session management. Full production deployment on Apache Tomcat.</div>
+        <div class="proj-footer">
+          <div class="launch-btn">VIEW DETAILS</div>
+          <div class="proj-year">2025 · LIVE</div>
+        </div>
+      </div>
+
+      <!-- TicketBook -->
+      <div class="project-card glass-hot" onclick="openModal(1)">
+        <span class="proj-icon">🎟️</span>
+        <div class="proj-title">TicketBook</div>
+        <div class="proj-stack">React.js · Node.js · PostgreSQL · REST · JWT</div>
+        <div class="proj-desc">Full-stack ticket booking system built during internship. User & Admin dashboards, JWT authentication, optimized PostgreSQL queries and complete CRUD operations.</div>
+        <div class="proj-footer">
+          <div class="launch-btn">VIEW DETAILS</div>
+          <div class="proj-year">2025–26 · LIVE</div>
+        </div>
+      </div>
+
+      <!-- DOB Calculator -->
+      <div class="project-card glass-hot" onclick="openModal(2)">
+        <span class="proj-icon">📅</span>
+        <div class="proj-title">DOB Calculator</div>
+        <div class="proj-stack">JavaScript · HTML5 · CSS3 · Date API</div>
+        <div class="proj-desc">Real-time age calculator with full date validation, edge-case handling, and a clean responsive interface using native JavaScript Date APIs.</div>
+        <div class="proj-footer">
+          <div class="launch-btn">VIEW DETAILS</div>
+          <div class="proj-year">2025 · LIVE</div>
+        </div>
+      </div>
+
+      <!-- WeatherLive -->
+      <div class="project-card glass-hot" onclick="openModal(3)">
+        <span class="proj-icon">🌤️</span>
+        <div class="proj-title">WeatherLive</div>
+        <div class="proj-stack">JavaScript · REST API · Async/Await</div>
+        <div class="proj-desc">Real-time weather dashboard consuming a public REST API. Features dynamic icons, temperature conversion, city search, and robust error handling with async/await.</div>
+        <div class="proj-footer">
+          <div class="launch-btn">VIEW DETAILS</div>
+          <div class="proj-year">2025 · LIVE</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="panel-footer">
+      <span>ALL INSTANCES SECURED · QUANTUM ENCRYPTED</span>
+      <span>LAST DEPLOY: 03 APR 2026</span>
+      <span class="back-link" onclick="window.location.href='index.html'">← DASHBOARD</span>
+    </div>
+
+  </div>
+</main>
+
+<!-- Modals -->
+<div class="proj-modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="proj-modal glass-hot">
+    <div class="modal-head">
+      <div class="modal-title" id="modal-title"></div>
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<!-- Terminal -->
+<div id="global-terminal" class="terminal-window glass hidden">
+  <div class="term-win-head">
+    <span class="term-win-title">TERMINAL · root@JayOS</span>
+    <button class="close-btn" onclick="toggleTerminal()">✕</button>
+  </div>
+  <div id="terminal-output" class="terminal-output"></div>
+  <div class="terminal-input-line">
+    <span class="prompt">&gt;</span>
+    <input id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="type command...">
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+  const projects = [
+    {
+      icon: '📚',
+      title: 'CodeShelf — Multi-Module Java JSP Application',
+      body: `
+        <p><strong>Built 2025</strong> — Full MVC architecture with 6 integrated utility modules.</p>
+        <ul>
+          <li>Authentication, session management &amp; role-based access control</li>
+          <li>Java Servlets + JSP frontend + MySQL backend</li>
+          <li>Deployed on Apache Tomcat</li>
+          <li>Complete GitHub repository available</li>
+        </ul>
+        <a href="https://github.com/jaylalkiya" target="_blank" class="modal-link">VIEW REPOSITORY →</a>
+        <div class="modal-status">Status: <span class="live">DEPLOYED &amp; RUNNING</span> · Container ID: CS-2025-01</div>
+      `
+    },
+    {
+      icon: '🎟️',
+      title: 'TicketBook — Full Stack Ticket Booking System',
+      body: `
+        <p><strong>Internship Project 2025–2026</strong> — Production-grade full-stack application.</p>
+        <ul>
+          <li>React.js responsive UI with User &amp; Admin dashboards</li>
+          <li>Node.js + REST APIs with JWT authentication</li>
+          <li>PostgreSQL optimized queries &amp; CRUD operations</li>
+          <li>Real-time booking flow with secure payment simulation</li>
+        </ul>
+        <div class="modal-status">Status: <span class="live">LIVE IN PRODUCTION</span> · Container ID: TB-2026-01</div>
+      `
+    },
+    {
+      icon: '📅',
+      title: 'DOB Calculator — JavaScript Utility',
+      body: `
+        <p>Precise age calculation app with input validation using native JavaScript Date APIs.</p>
+        <p style="margin-top:12px">Features: real-time updates, edge-case handling, clean responsive UI.</p>
+        <a href="https://github.com/jaylalkiya/DateOfBirthCalculation" target="_blank" class="modal-link">OPEN LIVE DEMO + SOURCE →</a>
+        <div class="modal-status">Status: <span class="live">LIVE</span></div>
+      `
+    },
+    {
+      icon: '🌤️',
+      title: 'WeatherLive — REST API Dashboard',
+      body: `
+        <p>Real-time weather application consuming public REST API with async/await fetch and robust error handling.</p>
+        <p style="margin-top:12px">Features: dynamic icons, temperature conversion, city search, loading states.</p>
+        <a href="https://github.com/jaylalkiya/WeatherApp" target="_blank" class="modal-link">OPEN LIVE DEMO + SOURCE →</a>
+        <div class="modal-status">Status: <span class="live">LIVE</span></div>
+      `
+    }
+  ];
+
+  function openModal(idx) {
+    const p = projects[idx];
+    document.getElementById('modal-title').textContent = p.icon + ' ' + p.title;
+    document.getElementById('modal-body').innerHTML = p.body;
+    document.getElementById('modal-overlay').classList.add('open');
+  }
+
+  function closeModal(e) {
+    if (e.target === document.getElementById('modal-overlay')) closeModalDirect();
+  }
+
+  function closeModalDirect() {
+    document.getElementById('modal-overlay').classList.remove('open');
+  }
+
+  window.addEventListener('load', () => {
+    initCommonFeatures();
+    // Card entrance stagger
+    document.querySelectorAll('.project-card').forEach((card, i) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        card.style.transition = `opacity 0.5s var(--ease) ${i * 80}ms, transform 0.5s var(--ease) ${i * 80}ms`;
+        card.style.opacity = '1';
+        card.style.transform = 'none';
+      }, 200);
+    });
+  });
+</script>
+</body>
+</html>

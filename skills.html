@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JayOS — RESOURCES.MON | Jay Lalkiya System Resources">
+  <title>JayOS — RESOURCES.MON</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="os-body">
+
+<div id="custom-cursor"></div>
+<div id="cursor-dot"></div>
+
+<!-- Header -->
+<header class="os-header glass">
+  <div class="hdr-left">
+    <div class="logo-wrap">
+      <span>🌀</span>
+      <span class="logo-text-gradient">JAYOS</span>
+    </div>
+    <div class="module-badge">RESOURCES.MON</div>
+  </div>
+  <div class="hdr-center">
+    <div class="status-chip">
+      <span class="status-dot"></span>
+      <span>ALL THREADS ACTIVE · 19ms</span>
+    </div>
+  </div>
+  <div class="hdr-right">
+    <div class="user-chip glass">
+      <span class="user-av">JL</span>
+      <span>Jay Lalkiya</span>
+    </div>
+    <div id="live-clock">--:--</div>
+    <button class="term-btn" onclick="toggleTerminal()" title="Terminal (/)">⌘</button>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="page-main">
+  <div class="panel glass fade-up">
+
+    <div style="display:flex; align-items:center; gap:16px; margin-bottom:36px; flex-wrap:wrap;">
+      <div>
+        <div class="panel-eyebrow">SYSTEM DIAGNOSTICS</div>
+        <h1 class="panel-title">RESOURCES<span class="accent">.MON</span></h1>
+      </div>
+      <div style="flex:1; min-width:60px; height:1px; background:linear-gradient(90deg, transparent, var(--border-hot), transparent);"></div>
+      <div style="font-size:0.7rem; letter-spacing:3px; color:var(--purple);">CPU · RAM · THREADS · STACK</div>
+    </div>
+
+    <div class="skills-grid">
+
+      <!-- Languages -->
+      <div class="skill-card glass-hot">
+        <div class="skill-card-label">LANGUAGES.EXE</div>
+
+        <div class="skill-row">
+          <div class="skill-meta">
+            <span class="skill-name">Java</span>
+            <span class="skill-pct" id="v-java">0%</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" id="b-java"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-meta">
+            <span class="skill-name">JavaScript</span>
+            <span class="skill-pct" id="v-js">0%</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" id="b-js"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-meta">
+            <span class="skill-name">Python</span>
+            <span class="skill-pct" id="v-py">0%</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" id="b-py"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-meta">
+            <span class="skill-name">C / C++</span>
+            <span class="skill-pct" id="v-cpp">0%</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" id="b-cpp"></div></div>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="skill-card glass-hot">
+        <div class="skill-card-label">FRONTEND.DLL</div>
+
+        <div class="skill-row">
+          <div class="skill-meta">
+            <span class="skill-name">React.js</span>
+            <span class="skill-pct" id="v-react">0%</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" id="b-react"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-meta">
+            <span class="skill-name">HTML5 + CSS3</span>
+            <span class="skill-pct" id="v-html">0%</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" id="b-html"></div></div>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="skill-card glass-hot">
+        <div class="skill-card-label">BACKEND.SYS</div>
+
+        <div class="skill-row">
+          <div class="skill-meta">
+            <span class="skill-name">Node.js</span>
+            <span class="skill-pct" id="v-node">0%</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" id="b-node"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-meta">
+            <span class="skill-name">Java Servlets / JSP</span>
+            <span class="skill-pct" id="v-servlet">0%</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" id="b-servlet"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-meta">
+            <span class="skill-name">REST APIs</span>
+            <span class="skill-pct" id="v-rest">0%</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" id="b-rest"></div></div>
+        </div>
+      </div>
+
+      <!-- Databases -->
+      <div class="skill-card glass-hot">
+        <div class="skill-card-label">DATABASES.DB</div>
+
+        <div class="skill-row">
+          <div class="skill-meta">
+            <span class="skill-name">PostgreSQL</span>
+            <span class="skill-pct" id="v-pg">0%</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" id="b-pg"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-meta">
+            <span class="skill-name">MySQL</span>
+            <span class="skill-pct" id="v-mysql">0%</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" id="b-mysql"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-meta">
+            <span class="skill-name">Oracle</span>
+            <span class="skill-pct" id="v-oracle">0%</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" id="b-oracle"></div></div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="skill-card glass-hot">
+        <div class="skill-card-label">TOOLS + CONCEPTS</div>
+
+        <div class="skill-row">
+          <div class="skill-meta">
+            <span class="skill-name">Git · Tomcat · MVC · OOP</span>
+            <span class="skill-pct" id="v-tools">0%</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" id="b-tools"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-meta">
+            <span class="skill-name">SDLC · Auth · DB Design</span>
+            <span class="skill-pct" id="v-concepts">0%</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" id="b-concepts"></div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="panel-footer">
+      <span>CPU LOAD: <span style="color:var(--pink)" id="cpu-flicker">42%</span> · RAM: 68% · THREADS: 17</span>
+      <span>LAST SCAN: 03 APR 2026</span>
+      <span class="back-link" onclick="window.location.href='index.html'">← DASHBOARD</span>
+    </div>
+
+  </div>
+</main>
+
+<!-- Terminal -->
+<div id="global-terminal" class="terminal-window glass hidden">
+  <div class="term-win-head">
+    <span class="term-win-title">TERMINAL · root@JayOS</span>
+    <button class="close-btn" onclick="toggleTerminal()">✕</button>
+  </div>
+  <div id="terminal-output" class="terminal-output"></div>
+  <div class="terminal-input-line">
+    <span class="prompt">&gt;</span>
+    <input id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="type command...">
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+  const skillData = [
+    { bar: 'b-java',     val: 'v-java',     target: 92 },
+    { bar: 'b-js',       val: 'v-js',       target: 95 },
+    { bar: 'b-py',       val: 'v-py',       target: 78 },
+    { bar: 'b-cpp',      val: 'v-cpp',      target: 85 },
+    { bar: 'b-react',    val: 'v-react',    target: 90 },
+    { bar: 'b-html',     val: 'v-html',     target: 98 },
+    { bar: 'b-node',     val: 'v-node',     target: 88 },
+    { bar: 'b-servlet',  val: 'v-servlet',  target: 93 },
+    { bar: 'b-rest',     val: 'v-rest',     target: 96 },
+    { bar: 'b-pg',       val: 'v-pg',       target: 89 },
+    { bar: 'b-mysql',    val: 'v-mysql',    target: 94 },
+    { bar: 'b-oracle',   val: 'v-oracle',   target: 82 },
+    { bar: 'b-tools',    val: 'v-tools',    target: 97 },
+    { bar: 'b-concepts', val: 'v-concepts', target: 91 },
+  ];
+
+  window.addEventListener('load', () => {
+    initCommonFeatures();
+
+    skillData.forEach((s, i) => {
+      setTimeout(() => {
+        const bar = document.getElementById(s.bar);
+        const val = document.getElementById(s.val);
+        bar.style.width = s.target + '%';
+        // count up number separately
+        let c = 0;
+        const t = setInterval(() => {
+          c = Math.min(c + 4, s.target);
+          val.textContent = c + '%';
+          if (c >= s.target) clearInterval(t);
+        }, 30);
+      }, i * 55);
+    });
+
+    // CPU flicker
+    setInterval(() => {
+      document.getElementById('cpu-flicker').textContent = (Math.floor(Math.random() * 14) + 36) + '%';
+    }, 1800);
+  });
+</script>
+</body>
+</html>

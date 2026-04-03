@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JayOS — LOG.TXT | Jay Lalkiya Kernel History">
+  <title>JayOS — LOG.TXT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="os-body">
+
+<div id="custom-cursor"></div>
+<div id="cursor-dot"></div>
+
+<!-- Header -->
+<header class="os-header glass">
+  <div class="hdr-left">
+    <div class="logo-wrap">
+      <span>🌀</span>
+      <span class="logo-text-gradient">JAYOS</span>
+    </div>
+    <div class="module-badge">LOG.TXT</div>
+  </div>
+  <div class="hdr-center">
+    <div class="status-chip">
+      <span class="status-dot"></span>
+      <span>KERNEL HISTORY · 5 ENTRIES</span>
+    </div>
+  </div>
+  <div class="hdr-right">
+    <div class="user-chip glass">
+      <span class="user-av">JL</span>
+      <span>Jay Lalkiya</span>
+    </div>
+    <div id="live-clock">--:--</div>
+    <button class="term-btn" onclick="toggleTerminal()" title="Terminal (/)">⌘</button>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="page-main">
+  <div class="panel glass fade-up" style="max-width:860px;">
+
+    <div style="display:flex; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;">
+      <div>
+        <div class="panel-eyebrow">SYSTEM HISTORY</div>
+        <h1 class="panel-title">KERNEL<span class="accent"> LOG</span></h1>
+      </div>
+      <div style="flex:1; min-width:40px; height:1px; background:linear-gradient(90deg, transparent, var(--border-hot), transparent);"></div>
+    </div>
+
+    <div class="timeline">
+
+      <!-- Entry 1 -->
+      <div class="timeline-entry">
+        <div class="entry-date">03 APR 2023</div>
+        <div class="entry-badge">BOOT</div>
+        <div class="entry-title">System Initialized — BCA Program</div>
+        <div class="entry-desc">Entered BCA at Dr. V. R. Godhaniya IT College. Began foundational studies in Computer Applications, Data Structures, and core programming.</div>
+        <div class="entry-tech">
+          <span class="tag">83.38% AGGREGATE</span>
+          <span class="tag">FINAL YEAR</span>
+        </div>
+      </div>
+
+      <!-- Entry 2 -->
+      <div class="timeline-entry">
+        <div class="entry-date">15 JUN 2025</div>
+        <div class="entry-badge">DEPLOY</div>
+        <div class="entry-title">CodeShelf v1.0 — Launched</div>
+        <div class="entry-desc">Multi-module MVC Java JSP platform with 6 integrated utilities deployed on Apache Tomcat. Full authentication, session management, and role-based access control.</div>
+        <div class="entry-tech">
+          <span class="tag">Java</span>
+          <span class="tag">JSP</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Servlets</span>
+          <span class="tag">Tomcat</span>
+        </div>
+      </div>
+
+      <!-- Entry 3 — Highlight -->
+      <div class="timeline-entry highlight">
+        <div class="entry-date">01 SEP 2025 – 28 FEB 2026</div>
+        <div class="entry-badge">INTERNSHIP</div>
+        <div class="entry-title">Full Stack Developer Intern — Ticket Booking System</div>
+        <div class="entry-desc">Developed a production-grade full-stack application with User &amp; Admin dashboards. Implemented JWT auth, REST APIs, optimized PostgreSQL queries, and complete CRUD operations using React.js and Node.js.</div>
+        <div class="entry-tech">
+          <span class="tag">React.js</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">JWT</span>
+          <span class="tag">REST APIs</span>
+        </div>
+      </div>
+
+      <!-- Entry 4 -->
+      <div class="timeline-entry">
+        <div class="entry-date">10 NOV 2025</div>
+        <div class="entry-badge">MINI-DEPLOY</div>
+        <div class="entry-title">DOB Calculator &amp; WeatherLive — Launched</div>
+        <div class="entry-desc">Two production-ready JavaScript utilities — a precise age calculator with date validation, and a real-time weather dashboard consuming a public REST API with async/await and error handling.</div>
+        <div class="entry-tech">
+          <span class="tag">JavaScript</span>
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">REST API</span>
+        </div>
+      </div>
+
+      <!-- Entry 5 -->
+      <div class="timeline-entry">
+        <div class="entry-date">03 APR 2026</div>
+        <div class="entry-badge">ONLINE</div>
+        <div class="entry-title">Status: Seeking Entry-Level Role</div>
+        <div class="entry-desc">Currently seeking a Full Stack Developer position. Ready to join a production team and contribute to scalable, real-world applications.</div>
+        <div class="entry-tech">
+          <span class="tag">AVAILABLE</span>
+          <span class="tag">AHMEDABAD · REMOTE</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="panel-footer" style="margin-top:48px;">
+      <span>END OF LOG · NO ERRORS DETECTED · ALL SYSTEMS NOMINAL</span>
+      <span class="back-link" onclick="window.location.href='index.html'">← DASHBOARD</span>
+    </div>
+
+  </div>
+</main>
+
+<!-- Terminal -->
+<div id="global-terminal" class="terminal-window glass hidden">
+  <div class="term-win-head">
+    <span class="term-win-title">TERMINAL · root@JayOS</span>
+    <button class="close-btn" onclick="toggleTerminal()">✕</button>
+  </div>
+  <div id="terminal-output" class="terminal-output"></div>
+  <div class="terminal-input-line">
+    <span class="prompt">&gt;</span>
+    <input id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="type command...">
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+  window.addEventListener('load', () => {
+    initCommonFeatures();
+
+    // Stagger timeline entries
+    const entries = document.querySelectorAll('.timeline-entry');
+    entries.forEach((el, i) => {
+      setTimeout(() => {
+        el.classList.add('visible');
+      }, 150 + i * 120);
+    });
+  });
+</script>
+</body>
+</html>

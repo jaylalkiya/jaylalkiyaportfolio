@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JayOS — Jay Lalkiya Developer Portfolio">
+  <title>JayOS — Initializing...</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="os-body">
+
+<!-- CURSOR -->
+<div id="custom-cursor"></div>
+<div id="cursor-dot"></div>
+
+<!-- ─── BOOT SCREEN ─────────────────────── -->
+<div id="boot-screen">
+  <div class="boot-inner">
+    <div class="boot-logo-ring">
+      <span class="boot-symbol">🌀</span>
+    </div>
+
+    <div class="boot-wordmark">JAY<span>OS</span></div>
+    <div class="boot-tagline">v3.0 · QUANTUM KERNEL · AHMEDABAD</div>
+
+    <div class="boot-log">
+      <div class="boot-line"></div>
+      <div class="boot-line"></div>
+      <div class="boot-line"></div>
+      <div class="boot-line"></div>
+      <div class="boot-line"></div>
+    </div>
+
+    <div class="boot-track">
+      <div class="boot-fill" id="boot-fill"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── DASHBOARD ───────────────────────── -->
+<div id="dashboard" class="hidden">
+
+  <!-- Header -->
+  <header class="os-header glass">
+    <div class="hdr-left">
+      <div class="logo-wrap">
+        <span>🌀</span>
+        <span class="logo-text-gradient">JAYOS</span>
+      </div>
+      <div class="module-badge">DASHBOARD</div>
+    </div>
+
+    <div class="hdr-center">
+      <div class="status-chip">
+        <span class="status-dot"></span>
+        <span>ONLINE · 37ms latency</span>
+      </div>
+    </div>
+
+    <div class="hdr-right">
+      <div class="user-chip glass">
+        <span class="user-av">JL</span>
+        <span>Jay Lalkiya</span>
+      </div>
+      <div id="live-clock">--:--</div>
+      <button class="term-btn" onclick="toggleTerminal()" title="Terminal (/)">⌘</button>
+    </div>
+  </header>
+
+  <!-- Module Grid -->
+  <main class="dash-grid">
+
+    <a href="about.html" class="module-card glass">
+      <span class="card-icon">👤</span>
+      <div class="card-title">ABOUT.SYS</div>
+      <div class="card-desc">System profile · neural imprint · BCA 83.38%</div>
+      <div class="open-btn">OPEN MODULE</div>
+    </a>
+
+    <a href="skills.html" class="module-card glass">
+      <span class="card-icon">⚡</span>
+      <div class="card-title">RESOURCES.MON</div>
+      <div class="card-desc">CPU · RAM · active threads · quantum stack</div>
+      <div class="open-btn">OPEN MODULE</div>
+    </a>
+
+    <a href="projects.html" class="module-card glass">
+      <span class="card-icon">📦</span>
+      <div class="card-title">DEPLOY.APPS</div>
+      <div class="card-desc">Live instances · 4 containers · production grade</div>
+      <div class="open-btn">OPEN MODULE</div>
+    </a>
+
+    <a href="experience.html" class="module-card glass">
+      <span class="card-icon">📜</span>
+      <div class="card-title">LOG.TXT</div>
+      <div class="card-desc">Kernel history · internship · deployment timeline</div>
+      <div class="open-btn">OPEN MODULE</div>
+    </a>
+
+    <a href="contact.html" class="module-card glass">
+      <span class="card-icon">📡</span>
+      <div class="card-title">COMM.LINK</div>
+      <div class="card-desc">Direct encrypted uplink · ready to connect</div>
+      <div class="open-btn">OPEN MODULE</div>
+    </a>
+
+  </main>
+
+  <!-- Terminal -->
+  <div id="global-terminal" class="terminal-window glass hidden">
+    <div class="term-win-head">
+      <span class="term-win-title">TERMINAL · root@JayOS</span>
+      <button class="close-btn" onclick="toggleTerminal()">✕</button>
+    </div>
+    <div id="terminal-output" class="terminal-output"></div>
+    <div class="terminal-input-line">
+      <span class="prompt">&gt;</span>
+      <input id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="type command...">
+    </div>
+  </div>
+
+</div><!-- /dashboard -->
+
+<script src="js/script.js"></script>
+</body>
+</html>

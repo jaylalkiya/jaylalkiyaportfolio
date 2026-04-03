@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JayOS — COMM.LINK | Direct Uplink to Jay Lalkiya">
+  <title>JayOS — COMM.LINK</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="os-body">
+
+<div id="custom-cursor"></div>
+<div id="cursor-dot"></div>
+
+<!-- Header -->
+<header class="os-header glass">
+  <div class="hdr-left">
+    <div class="logo-wrap">
+      <span>🌀</span>
+      <span class="logo-text-gradient">JAYOS</span>
+    </div>
+    <div class="module-badge">COMM.LINK</div>
+  </div>
+  <div class="hdr-center">
+    <div class="status-chip">
+      <span class="status-dot"></span>
+      <span>DIRECT UPLINK · ENCRYPTED</span>
+    </div>
+  </div>
+  <div class="hdr-right">
+    <div class="user-chip glass">
+      <span class="user-av">JL</span>
+      <span>Jay Lalkiya</span>
+    </div>
+    <div id="live-clock">--:--</div>
+    <button class="term-btn" onclick="toggleTerminal()" title="Terminal (/)">⌘</button>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="page-main">
+  <div class="panel glass fade-up" style="max-width:900px;">
+
+    <div style="margin-bottom:36px;">
+      <div class="panel-eyebrow">ESTABLISH SECURE CHANNEL</div>
+      <h1 class="panel-title">COMM<span class="accent">.LINK</span></h1>
+    </div>
+
+    <div class="contact-wrap">
+
+      <!-- Left: Info -->
+      <div class="contact-info-col">
+
+        <a href="mailto:jaylalkiya02@gmail.com" class="contact-block">
+          <div class="contact-block-icon">✉️</div>
+          <div>
+            <div class="contact-block-label">EMAIL NODE</div>
+            <div class="contact-block-value">jaylalkiya02@gmail.com</div>
+          </div>
+        </a>
+
+        <a href="tel:+918200411490" class="contact-block">
+          <div class="contact-block-icon">📱</div>
+          <div>
+            <div class="contact-block-label">MOBILE SIGNAL</div>
+            <div class="contact-block-value">+91 82004 11490</div>
+          </div>
+        </a>
+
+        <a href="https://github.com/jaylalkiya" target="_blank" class="contact-block">
+          <div class="contact-block-icon">🔗</div>
+          <div>
+            <div class="contact-block-label">GITHUB REPOSITORY</div>
+            <div class="contact-block-value">github.com/jaylalkiya</div>
+          </div>
+        </a>
+
+        <div class="contact-block" style="cursor:default; opacity:0.7;">
+          <div class="contact-block-icon">📍</div>
+          <div>
+            <div class="contact-block-label">LOCATION</div>
+            <div class="contact-block-value">Ahmedabad, Gujarat · India</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Form -->
+      <div>
+        <div class="term-form" id="contact-form">
+          <div class="term-form-bar">
+            <div class="dot dot-r"></div>
+            <div class="dot dot-y"></div>
+            <div class="dot dot-g"></div>
+            <span class="term-form-title">SECURE TRANSMISSION · root@JayOS</span>
+          </div>
+          <div class="term-form-body">
+            <div class="form-row">
+              <span class="form-prompt">&gt;</span>
+              <input class="form-input" type="text" id="name-input" placeholder="YOUR CALLSIGN / NAME" required>
+            </div>
+            <div class="form-row">
+              <span class="form-prompt">&gt;</span>
+              <input class="form-input" type="email" id="email-input" placeholder="YOUR EMAIL NODE" required>
+            </div>
+            <div class="form-row" style="align-items:flex-start;">
+              <span class="form-prompt" style="padding-top:10px;">&gt;</span>
+              <textarea class="form-input" id="message-input" placeholder="MESSAGE TO JAY..." required></textarea>
+            </div>
+            <button class="send-btn" onclick="sendTransmission()">TRANSMIT TO JAY'S CORE →</button>
+          </div>
+        </div>
+
+        <!-- Success -->
+        <div class="success-box" id="success-box">
+          <div style="font-size:3rem;">📡</div>
+          <h3>TRANSMISSION SENT</h3>
+          <p>Signal received by Jay Lalkiya.<br>Response expected within 24 Earth hours.</p>
+          <button class="reset-btn" onclick="resetForm()">SEND ANOTHER TRANSMISSION</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="panel-footer">
+      <span>ENCRYPTED · QUANTUM SECURED · AHMEDABAD, GUJARAT</span>
+      <span class="back-link" onclick="window.location.href='index.html'">← DASHBOARD</span>
+    </div>
+
+  </div>
+</main>
+
+<!-- Terminal -->
+<div id="global-terminal" class="terminal-window glass hidden">
+  <div class="term-win-head">
+    <span class="term-win-title">TERMINAL · root@JayOS</span>
+    <button class="close-btn" onclick="toggleTerminal()">✕</button>
+  </div>
+  <div id="terminal-output" class="terminal-output"></div>
+  <div class="terminal-input-line">
+    <span class="prompt">&gt;</span>
+    <input id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="type command...">
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+  function sendTransmission() {
+    const name    = document.getElementById('name-input').value.trim();
+    const email   = document.getElementById('email-input').value.trim();
+    const message = document.getElementById('message-input').value.trim();
+
+    if (!name || !email || !message) {
+      alert('⚠️  TRANSMISSION INCOMPLETE — all fields required');
+      return;
+    }
+
+    const form = document.getElementById('contact-form');
+    form.style.transition = 'opacity 0.5s';
+    form.style.opacity = '0';
+
+    setTimeout(() => {
+      form.style.display = 'none';
+      const box = document.getElementById('success-box');
+      box.style.display = 'block';
+    }, 500);
+  }
+
+  function resetForm() {
+    const form = document.getElementById('contact-form');
+    const box  = document.getElementById('success-box');
+    box.style.display = 'none';
+    form.style.display = 'block';
+    form.style.opacity = '1';
+    document.getElementById('name-input').value = '';
+    document.getElementById('email-input').value = '';
+    document.getElementById('message-input').value = '';
+  }
+
+  window.addEventListener('load', () => { initCommonFeatures(); });
+</script>
+</body>
+</html>

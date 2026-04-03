@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JayOS — ABOUT.SYS | Jay Lalkiya System Profile">
+  <title>JayOS — ABOUT.SYS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="os-body">
+
+<div id="custom-cursor"></div>
+<div id="cursor-dot"></div>
+
+<!-- Header -->
+<header class="os-header glass">
+  <div class="hdr-left">
+    <div class="logo-wrap">
+      <span>🌀</span>
+      <span class="logo-text-gradient">JAYOS</span>
+    </div>
+    <div class="module-badge">ABOUT.SYS</div>
+  </div>
+  <div class="hdr-center">
+    <div class="status-chip">
+      <span class="status-dot"></span>
+      <span>AUTHORIZED USER · CONNECTED</span>
+    </div>
+  </div>
+  <div class="hdr-right">
+    <div class="user-chip glass">
+      <span class="user-av">JL</span>
+      <span>Jay Lalkiya</span>
+    </div>
+    <div id="live-clock">--:--</div>
+    <button class="term-btn" onclick="toggleTerminal()" title="Terminal (/)">⌘</button>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="page-main">
+  <div class="panel glass fade-up">
+
+    <!-- Hero row -->
+    <div class="about-hero">
+      <div>
+        <div class="panel-eyebrow">ROOT@JAYOS · SYSTEM PROFILE</div>
+        <h1 class="panel-title">SYSTEM<br><span class="accent">PROFILE</span></h1>
+      </div>
+      <div class="about-links">
+        <a href="mailto:jaylalkiya02@gmail.com" class="link-pill">✉️ jaylalkiya02@gmail.com</a>
+        <a href="tel:+918200411490" class="link-pill">📱 +91 82004 11490</a>
+        <a href="https://github.com/jaylalkiya" target="_blank" class="link-pill">🔗 github.com/jaylalkiya</a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Bio -->
+    <p class="bio">
+      Final-year BCA student and aspiring Full Stack Developer with hands-on experience in Java, React.js,
+      and Node.js. Skilled in building scalable web applications using MVC architecture, REST APIs, and
+      relational databases. Seeking an entry-level role to apply full-stack development and problem-solving skills.
+    </p>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+
+      <div class="stat-card">
+        <div class="stat-num" id="stat-gpa">0%</div>
+        <div class="stat-label">BCA AGGREGATE</div>
+        <div class="stat-sub">Dr. V. R. Godhaniya IT College<br>2023 — 2026</div>
+        <div class="mini-bar-wrap">
+          <div class="mini-bar" id="bar-gpa"></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-num" id="stat-exp">0</div>
+        <div class="stat-label">YEARS IN MATRIX</div>
+        <div class="stat-sub">Full Stack Intern<br>Ticket Booking System · 2025–26</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-num" id="stat-proj">0</div>
+        <div class="stat-label">DEPLOYED APPS</div>
+        <div class="stat-sub">CodeShelf + 3 live projects</div>
+        <div class="tag-row">
+          <span class="tag">MVC</span>
+          <span class="tag">REST</span>
+          <span class="tag">POSTGRES</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-num" id="stat-tech">0</div>
+        <div class="stat-label">ACTIVE TECH THREADS</div>
+        <div class="stat-sub">Java · React · Node.js<br>MySQL · PostgreSQL · Git</div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="panel-footer">
+      <span>STATUS: ONLINE · KERNEL v3.0.0</span>
+      <span>LAST BOOT: 03 APR 2026 · IST</span>
+      <span class="back-link" onclick="window.location.href='index.html'">← RETURN TO DASHBOARD</span>
+    </div>
+
+  </div>
+</main>
+
+<!-- Terminal -->
+<div id="global-terminal" class="terminal-window glass hidden">
+  <div class="term-win-head">
+    <span class="term-win-title">TERMINAL · root@JayOS</span>
+    <button class="close-btn" onclick="toggleTerminal()">✕</button>
+  </div>
+  <div id="terminal-output" class="terminal-output"></div>
+  <div class="terminal-input-line">
+    <span class="prompt">&gt;</span>
+    <input id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="type command...">
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+  window.addEventListener('load', () => {
+    initCommonFeatures();
+
+    // Animate GPA counter
+    let g = 0;
+    const gEl = document.getElementById('stat-gpa');
+    const gBar = document.getElementById('bar-gpa');
+    const gTimer = setInterval(() => {
+      g = Math.min(g + 1.4, 83.38);
+      gEl.textContent = g.toFixed(2) + '%';
+      if (g >= 83.38) {
+        clearInterval(gTimer);
+        setTimeout(() => { gBar.style.width = '83.38%'; }, 100);
+      }
+    }, 22);
+
+    // Experience
+    let e = 0;
+    const eEl = document.getElementById('stat-exp');
+    const eT = setInterval(() => { eEl.textContent = ++e; if (e >= 2) clearInterval(eT); }, 200);
+
+    // Projects
+    let p = 0;
+    const pEl = document.getElementById('stat-proj');
+    const pT = setInterval(() => { pEl.textContent = ++p; if (p >= 4) clearInterval(pT); }, 160);
+
+    // Tech
+    let t = 0;
+    const tEl = document.getElementById('stat-tech');
+    const tT = setInterval(() => { tEl.textContent = ++t; if (t >= 8) clearInterval(tT); }, 100);
+  });
+</script>
+</body>
+</html>
